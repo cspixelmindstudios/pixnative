@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PixNative: Photo Edit &amp; Motion</title>
+  <meta name="description" content="Beautify photos, make them move and create New Year cards. 100% offline: your photos never leave your phone.">
+  <meta property="og:title" content="PixNative: Photo Edit &amp; Motion">
+  <meta property="og:description" content="Beautify photos, make them move and create New Year cards. 100% offline.">
+  <meta property="og:image" content="assets/feature_graphic.png">
+  <meta name="theme-color" content="#0b1026">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <img src="assets/icon.png" alt="">
+      <a class="brand" href="./">PixNative</a>
+      <nav>
+        <a class="hide-sm" href="#features">Features</a>
+        <a class="hide-sm" href="#screens">Screens</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <img class="icon" src="assets/icon.png" alt="PixNative app icon">
+        <h1>Edit. Beautify.<br><span>Bring photos to life.</span></h1>
+        <p class="lead">Greeting cards, moving photos, reels and albums with music — made right on your phone. Your photos never leave it.</p>
+        <span class="cta soon" id="play">Coming soon on Google Play</span>
+        <div class="chips">
+          <span class="chip">🔒 100% offline</span>
+          <span class="chip">No account</span>
+          <span class="chip">No ads</span>
+          <span class="chip">Easy for all ages</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything for your New Year wishes</h2>
+        <p class="sub">Tap a photo, pick a look, share to Instagram or WhatsApp. Real screen recordings from the app.</p>
+        <div class="features">
+          <div class="feature">
+            <video src="assets/living.mp4" poster="assets/living.jpg" muted loop playsinline preload="none"></video>
+            <h3>Living Portrait</h3>
+            <p>Your photo gently smiles, blinks and nods — or says your message in your voice.</p>
+          </div>
+          <div class="feature">
+            <video src="assets/reels.mp4" poster="assets/reels.jpg" muted loop playsinline preload="none"></video>
+            <h3>Reels with Music</h3>
+            <p>Pick photos, choose how each one enters and leaves, add a song. Ready for Reels and Shorts.</p>
+          </div>
+          <div class="feature">
+            <video src="assets/motion.mp4" poster="assets/motion.jpg" muted loop playsinline preload="none"></video>
+            <h3>Moving Photos</h3>
+            <p>Water flows, skies drift and leaves sway — plus confetti, fireworks and glowing text.</p>
+          </div>
+          <div class="feature">
+            <video src="assets/beauty.mp4" poster="assets/beauty.jpg" muted loop playsinline preload="none"></video>
+            <h3>Face Beauty</h3>
+            <p>Smooth skin, remove spots and brighten eyes — natural, with a slider for every part.</p>
+          </div>
+          <div class="feature">
+            <video src="assets/batchfix.mp4" poster="assets/batchfix.jpg" muted loop playsinline preload="none"></video>
+            <h3>Batch Fix</h3>
+            <p>Fix light, colour and faces in many photos at once. Hold to compare; your original is always kept.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens">
+      <div class="wrap">
+        <h2>Big buttons, clear words</h2>
+        <p class="sub">Designed so anyone in the family can make a card in a minute.</p>
+        <div class="shots">
+          <!-- SHOTS -->
+          <img src="assets/shot01.jpg" alt="PixNative screen 1" loading="lazy" width="585" height="1040">
+          <img src="assets/shot02.jpg" alt="PixNative screen 2" loading="lazy" width="585" height="1040">
+          <img src="assets/shot03.jpg" alt="PixNative screen 3" loading="lazy" width="585" height="1040">
+          <img src="assets/shot04.jpg" alt="PixNative screen 4" loading="lazy" width="585" height="1040">
+          <img src="assets/shot05.jpg" alt="PixNative screen 5" loading="lazy" width="585" height="1040">
+          <img src="assets/shot06.jpg" alt="PixNative screen 6" loading="lazy" width="585" height="1040">
+          <img src="assets/shot07.jpg" alt="PixNative screen 7" loading="lazy" width="585" height="1040">
+          <img src="assets/shot08.jpg" alt="PixNative screen 8" loading="lazy" width="585" height="1040">
+          <!-- /SHOTS -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Private by design</h2>
+        <p class="sub">PixNative has no internet permission. Every edit and AI tool runs on your device.</p>
+        <div class="private">
+          <div><b>Nothing uploaded</b><span>Your photos are processed on your phone and saved only when you tap Save.</span></div>
+          <div><b>No account, no tracking</b><span>No sign-in, no analytics, no ads, no third-party trackers.</span></div>
+          <div><b>Works offline</b><span>Use it on a plane, in a village or anywhere without data.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="grow">© 2026 PixNative</span>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="mailto:cspixelmindstudios@gmail.com">cspixelmindstudios@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // Play each clip only while it is on screen, to save data and battery.
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}); } else v.pause();
+    }), { threshold: 0.35 });
+    document.querySelectorAll("video").forEach(v => io.observe(v));
+  </script>
+</body>
+</html>
